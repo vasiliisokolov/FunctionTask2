@@ -12,7 +12,6 @@ int main()
 //a(n) = a(n-1) + a(n-2) + a(n-3)
 int find_method(int n)
 {
-    int result = 1;
     if (n == 0)
     {
         return 0;
@@ -31,11 +30,7 @@ int find_method(int n)
     }
     else
     {
-        for (int i = 1; i < n; i++)
-        {
-            result = (i-1)+(i-2)+(i-3);
-        }
-        return result;
+        return find_method(n-1)+ find_method(n-2)+ find_method(n-3);
     }
     
 }
